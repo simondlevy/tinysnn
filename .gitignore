@@ -56,3 +56,4 @@ dkms.conf
 
 # Unix executables
 test_connection_forward
+test_connection_init
