@@ -59,3 +59,5 @@ test_connection_forward
 test_connection_init
 test_network_forward
 test_network_init
+test_neuron_forward
+test_neuron_init

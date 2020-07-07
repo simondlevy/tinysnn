@@ -1,4 +1,6 @@
-EXE = test_connection_forward test_connection_init test_network_forward test_network_init
+EXE = test_connection_forward test_connection_init  \
+      test_network_forward test_network_init \
+      test_neuron_forward test_neuron_init
 
 all: $(EXE)
 
@@ -14,8 +16,11 @@ test_network_forward: test_network_forward.o Network.o Connection.o Neuron.o fun
 test_network_init: test_network_init.o Network.o Connection.o Neuron.o functional.o
 	gcc -o test_network_init test_network_init.o Network.o Connection.o Neuron.o functional.o -lm
 
-test_connection_forward.o: test_connection_forward.c Connection.h functional.h
-	gcc -c test_connection_forward.c
+test_neuron_forward: test_neuron_forward.o Network.o Connection.o Neuron.o functional.o
+	gcc -o test_neuron_forward test_neuron_forward.o Network.o Connection.o Neuron.o functional.o -lm
+
+test_neuron_init: test_neuron_init.o Network.o Connection.o Neuron.o functional.o
+	gcc -o test_neuron_init test_neuron_init.o Network.o Connection.o Neuron.o functional.o -lm
 
 test_connection_init.o: test_connection_init.c Connection.h functional.h
 	gcc -c test_connection_init.c
