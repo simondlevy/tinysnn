@@ -1,4 +1,4 @@
-EXE = test_connection_forward test_connection_init test_network_forward
+EXE = test_connection_forward test_connection_init test_network_forward test_network_init
 
 all: $(EXE)
 
@@ -10,6 +10,9 @@ test_connection_init: test_connection_init.o Connection.o functional.o
 
 test_network_forward: test_network_forward.o Network.o Connection.o Neuron.o functional.o
 	gcc -o test_network_forward test_network_forward.o Network.o Connection.o Neuron.o functional.o -lm
+
+test_network_init: test_network_init.o Network.o Connection.o Neuron.o functional.o
+	gcc -o test_network_init test_network_init.o Network.o Connection.o Neuron.o functional.o -lm
 
 test_connection_forward.o: test_connection_forward.c Connection.h functional.h
 	gcc -c test_connection_forward.c
