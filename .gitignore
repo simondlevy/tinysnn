@@ -53,3 +53,6 @@ dkms.conf
 
 # IDE
 .idea/
+
+# Unix executables
+test_connection_forward
